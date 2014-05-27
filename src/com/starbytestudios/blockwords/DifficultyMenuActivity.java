@@ -13,7 +13,6 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Point;
 import android.os.Bundle;
-import android.os.Vibrator;
 import android.view.Display;
 import android.view.Menu;
 import android.view.MotionEvent;
@@ -40,9 +39,6 @@ public class DifficultyMenuActivity extends Activity
 	protected void onCreate(Bundle savedInstanceState) 
 	{
 		buttonPressedAlready = false;
-		
-		//Get Vibrator
-		Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
 				
 		//The intent to be started upon a mode selection press
 		gameIntent = new Intent(getBaseContext(), GameActivity.class);
@@ -75,10 +71,10 @@ public class DifficultyMenuActivity extends Activity
 		
 		
 		//Create the buttons
-		buttonList.add(new CustomButton(vibrator, "EASY", size.x/5, (size.y/3)+((3*BUTTON_SIZE)/4)+(difficultyBitmap.getHeight()/10), BUTTON_SIZE));
-		buttonList.add(new CustomButton(vibrator, "HARD", size.x/2, size.y/3+(difficultyBitmap.getHeight()/10), BUTTON_SIZE));
-		buttonList.add(new CustomButton(vibrator, "EXPERT", size.x-size.x/5, (size.y/3)+((3*BUTTON_SIZE)/4)+(difficultyBitmap.getHeight()/10), BUTTON_SIZE));
-		buttonList.add(new CustomButton(vibrator, "MENU", size.x/2, (size.y)-(SMALL_BUTTON_SIZE+(SMALL_BUTTON_SIZE/3)), SMALL_BUTTON_SIZE));
+		buttonList.add(new CustomButton("EASY", size.x/5, (size.y/3)+((3*BUTTON_SIZE)/4)+(difficultyBitmap.getHeight()/10), BUTTON_SIZE));
+		buttonList.add(new CustomButton("HARD", size.x/2, size.y/3+(difficultyBitmap.getHeight()/10), BUTTON_SIZE));
+		buttonList.add(new CustomButton("EXPERT", size.x-size.x/5, (size.y/3)+((3*BUTTON_SIZE)/4)+(difficultyBitmap.getHeight()/10), BUTTON_SIZE));
+		buttonList.add(new CustomButton("MENU", size.x/2, (size.y)-(SMALL_BUTTON_SIZE+(SMALL_BUTTON_SIZE/3)), SMALL_BUTTON_SIZE));
 
 		
 		

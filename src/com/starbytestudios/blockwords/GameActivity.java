@@ -22,7 +22,6 @@ import android.graphics.Paint;
 import android.graphics.Paint.Align;
 import android.graphics.Point;
 import android.os.Bundle;
-import android.os.Vibrator;
 import android.view.Display;
 import android.view.Menu;
 import android.view.MotionEvent;
@@ -87,9 +86,6 @@ public class GameActivity extends Activity
 
 		LetterBlock.setSize(size.x/4);    //Set the size of the letter blocks
 		LetterBlock.initializeBitmaps(this);    //Set the size of the letter blocks
-
-		//Get Vibrator
-		Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
 		
 		//The intent to be started upon the main menu button press
 		mainMenuIntent = new Intent(getBaseContext(), MenuActivity.class);
@@ -107,9 +103,9 @@ public class GameActivity extends Activity
 //		buttonList.add(new CustomButton(vibrator, "❚❚", (size.x/2)+(size.x/8), (size.y)-(SMALL_BUTTON_SIZE+(SMALL_BUTTON_SIZE/3)), SMALL_BUTTON_SIZE));
 
 		
-		buttonList.add(new CustomButton(vibrator, "RESET", size.x/5, (size.y)-(SMALL_BUTTON_SIZE+(SMALL_BUTTON_SIZE/3)), SMALL_BUTTON_SIZE));
-		buttonList.add(new CustomButton(vibrator, "NEW", (size.x/2), (size.y)-(SMALL_BUTTON_SIZE+(SMALL_BUTTON_SIZE/3)), SMALL_BUTTON_SIZE));
-		buttonList.add(new CustomButton(vibrator, "MENU", size.x-(size.x/5), (size.y)-(SMALL_BUTTON_SIZE+(SMALL_BUTTON_SIZE/3)), SMALL_BUTTON_SIZE));
+		buttonList.add(new CustomButton("RESET", size.x/5, (size.y)-(SMALL_BUTTON_SIZE+(SMALL_BUTTON_SIZE/3)), SMALL_BUTTON_SIZE));
+		buttonList.add(new CustomButton("NEW", (size.x/2), (size.y)-(SMALL_BUTTON_SIZE+(SMALL_BUTTON_SIZE/3)), SMALL_BUTTON_SIZE));
+		buttonList.add(new CustomButton("MENU", size.x-(size.x/5), (size.y)-(SMALL_BUTTON_SIZE+(SMALL_BUTTON_SIZE/3)), SMALL_BUTTON_SIZE));
 
 
 		winMenuBitmap = BitmapFactory.decodeResource(this.getResources(), R.drawable.win_menu);

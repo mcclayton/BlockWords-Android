@@ -39,7 +39,6 @@ public class Ripple
 
 			if (rippleFadeValue <= 0)
 			{
-				int ripple1X = -999;
 				rippleSize = 0;
 				isRippling = false;
 			}

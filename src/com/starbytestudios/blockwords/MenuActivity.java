@@ -15,7 +15,6 @@ import android.graphics.Paint;
 import android.graphics.Point;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.os.Vibrator;
 import android.text.Layout;
 import android.text.Spannable;
 import android.text.SpannableString;
@@ -48,9 +47,6 @@ public class MenuActivity extends Activity
 	protected void onCreate(Bundle savedInstanceState) 
 	{
 		buttonPressedAlready = false;
-		
-		//Get Vibrator
-		Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
 				
 		//The intent to be started upon a mode selection press
 		difficultyMenuActivity = new Intent(getBaseContext(), DifficultyMenuActivity.class);
@@ -77,10 +73,10 @@ public class MenuActivity extends Activity
 		SMALL_BUTTON_SIZE = size.x/4;
 		
 		//Create the buttons
-		buttonList.add(new CustomButton(vibrator, "PLAY", size.x/2, size.y/2, BUTTON_SIZE));
-		buttonList.add(new CustomButton(vibrator, "STATS", size.x/2, (size.y/2)+BUTTON_SIZE, SMALL_BUTTON_SIZE));
-		buttonList.add(new CustomButton(vibrator, "INFO", size.x/5, (size.y/3)+((3*SMALL_BUTTON_SIZE)/4), SMALL_BUTTON_SIZE));
-		buttonList.add(new CustomButton(vibrator, "HELP", size.x-size.x/5, (size.y/3)+((3*SMALL_BUTTON_SIZE)/4), SMALL_BUTTON_SIZE));
+		buttonList.add(new CustomButton("PLAY", size.x/2, size.y/2, BUTTON_SIZE));
+		buttonList.add(new CustomButton("STATS", size.x/2, (size.y/2)+BUTTON_SIZE, SMALL_BUTTON_SIZE));
+		buttonList.add(new CustomButton("INFO", size.x/5, (size.y/3)+((3*SMALL_BUTTON_SIZE)/4), SMALL_BUTTON_SIZE));
+		buttonList.add(new CustomButton("HELP", size.x-size.x/5, (size.y/3)+((3*SMALL_BUTTON_SIZE)/4), SMALL_BUTTON_SIZE));
 		
 
 		titleBitmap = BitmapFactory.decodeResource(this.getResources(), R.drawable.title);

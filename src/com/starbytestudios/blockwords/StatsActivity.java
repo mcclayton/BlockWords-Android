@@ -18,7 +18,6 @@ import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Point;
 import android.os.Bundle;
-import android.os.Vibrator;
 import android.view.Display;
 import android.view.Menu;
 import android.view.MotionEvent;
@@ -51,9 +50,6 @@ public class StatsActivity extends Activity
 	protected void onCreate(Bundle savedInstanceState) 
 	{		
 		buttonPressedAlready = false;
-		
-		//Get Vibrator
-		Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
 
 		handler = new DataHandler();
 		
@@ -83,9 +79,9 @@ public class StatsActivity extends Activity
 		starBitmap = Bitmap.createScaledBitmap(starBitmap, easyBarBitmap.getHeight()/2, easyBarBitmap.getHeight()/2, true);
 
 		//Create the button
-		buttonList.add(new CustomButton(vibrator, "MENU", size.x/2, (size.y)-(BUTTON_SIZE+(BUTTON_SIZE/3)), BUTTON_SIZE));
-		buttonList.add(new CustomButton(vibrator, "<--", size.x/5, (size.y)-(BUTTON_SIZE+(BUTTON_SIZE/3)), BUTTON_SIZE));
-		buttonList.add(new CustomButton(vibrator, "RESET", size.x-(size.x/5), (size.y)-(BUTTON_SIZE+(BUTTON_SIZE/3)), BUTTON_SIZE));
+		buttonList.add(new CustomButton("MENU", size.x/2, (size.y)-(BUTTON_SIZE+(BUTTON_SIZE/3)), BUTTON_SIZE));
+		buttonList.add(new CustomButton("<--", size.x/5, (size.y)-(BUTTON_SIZE+(BUTTON_SIZE/3)), BUTTON_SIZE));
+		buttonList.add(new CustomButton("RESET", size.x-(size.x/5), (size.y)-(BUTTON_SIZE+(BUTTON_SIZE/3)), BUTTON_SIZE));
 		
 		
 		dataArrayList = handler.readFromFile(getBaseContext());

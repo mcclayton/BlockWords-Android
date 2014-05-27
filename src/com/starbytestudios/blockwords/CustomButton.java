@@ -4,8 +4,6 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Paint.Align;
-import android.os.Vibrator;
-
 
 public class CustomButton 
 {
@@ -15,7 +13,6 @@ public class CustomButton
 	private Paint paint = new Paint(Paint.FILTER_BITMAP_FLAG);
 	private Paint outerFadePaint = new Paint();
 	private Paint innerFadePaint = new Paint();
-	private int selectionState = 0;
 	private String buttonText = null;
 	private int innerFadeValue = 75;
 	private int outerFadeValue = 75;
@@ -25,11 +22,10 @@ public class CustomButton
 	private Boolean innerRippleDone = true;
 	private int outerRippleSize = 0;
 	private int innerRippleSize = 20;
-	private Vibrator vibrator;
 	private Boolean isPressed = false;
 
 
-	public CustomButton(Vibrator vibrate, String text, int x, int y, int size)
+	public CustomButton(String text, int x, int y, int size)
 	{
 		buttonText = text;
 		xCoord = x;
@@ -40,7 +36,6 @@ public class CustomButton
 		outerFadePaint.setStrokeWidth(3);
 		innerFadePaint.setColor(Color.rgb(8, 119, 155));
 		innerFadePaint.setAlpha(innerFadeValue);
-		vibrator = vibrate;
 		SIZE = size;
 	}
 
@@ -89,14 +84,6 @@ public class CustomButton
 	{
 		if (outerRippleDone)
 		{
-			try
-			{
-				vibrator.vibrate(25);
-			} catch (SecurityException e)
-			{
-			} catch (Exception e)
-			{
-			}
 			shouldOuterRipple = bool;
 			outerRippleSize = SIZE;
 			outerRippleDone = false;

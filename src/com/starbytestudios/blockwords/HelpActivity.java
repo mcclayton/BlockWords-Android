@@ -11,7 +11,6 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Point;
 import android.os.Bundle;
-import android.os.Vibrator;
 import android.view.Display;
 import android.view.Menu;
 import android.view.MotionEvent;
@@ -37,11 +36,7 @@ public class HelpActivity extends Activity
 	@Override
 	protected void onCreate(Bundle savedInstanceState) 
 	{
-		
 		buttonPressedAlready = false;
-		
-		//Get Vibrator
-		Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
 		
 		Display display = getWindowManager().getDefaultDisplay();
 		size = new Point();
@@ -59,7 +54,7 @@ public class HelpActivity extends Activity
 
 
 		//Create the button
-		buttonList.add(new CustomButton(vibrator, "MENU", size.x/2, (size.y)-(BUTTON_SIZE+(BUTTON_SIZE/3)), BUTTON_SIZE));		
+		buttonList.add(new CustomButton("MENU", size.x/2, (size.y)-(BUTTON_SIZE+(BUTTON_SIZE/3)), BUTTON_SIZE));		
 		
 		//The intent to be started upon a mode selection press
 		mainMenuIntent = new Intent(getBaseContext(), MenuActivity.class);

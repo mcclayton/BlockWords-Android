@@ -81,9 +81,9 @@ public class ScoresActivity extends Activity
 		starBitmap = Bitmap.createScaledBitmap(starBitmap, easyBarBitmap.getHeight()/2, easyBarBitmap.getHeight()/2, true);
 		
 		//Create the button
-		buttonList.add(new CustomButton(vibrator, "MENU", size.x/2, (size.y)-(BUTTON_SIZE+(BUTTON_SIZE/3)), BUTTON_SIZE));
-		buttonList.add(new CustomButton(vibrator, "RESET", size.x/5, (size.y)-(BUTTON_SIZE+(BUTTON_SIZE/3)), BUTTON_SIZE));
-		buttonList.add(new CustomButton(vibrator, "-->", size.x-(size.x/5), (size.y)-(BUTTON_SIZE+(BUTTON_SIZE/3)), BUTTON_SIZE));
+		buttonList.add(new CustomButton("MENU", size.x/2, (size.y)-(BUTTON_SIZE+(BUTTON_SIZE/3)), BUTTON_SIZE));
+		buttonList.add(new CustomButton("RESET", size.x/5, (size.y)-(BUTTON_SIZE+(BUTTON_SIZE/3)), BUTTON_SIZE));
+		buttonList.add(new CustomButton("-->", size.x-(size.x/5), (size.y)-(BUTTON_SIZE+(BUTTON_SIZE/3)), BUTTON_SIZE));
 		
 
 		statsIntent = new Intent(getBaseContext(), StatsActivity.class);
